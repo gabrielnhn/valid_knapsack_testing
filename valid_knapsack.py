@@ -31,7 +31,6 @@ def valid_knapsack(X: list, pairs: list, weights: list, knapsack_capacity: int) 
     return True
 
 
-
 if __name__ == "__main__":
     X = eval(input().split(":")[1])
     pairs = eval(input().split(":")[1])
