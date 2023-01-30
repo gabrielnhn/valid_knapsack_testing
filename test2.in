@@ -1,4 +1,4 @@
-X: [0]
-pairs: []
+X: [0, 0]
+pairs: [1]
 weights: [0, 0]
 capacity: 0
