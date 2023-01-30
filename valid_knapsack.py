@@ -1,7 +1,5 @@
-def valid_knapsack(X, pairs, weights, knapsack_capacity):
-    """
-    Return True iff X is a feasible solution.
-    """
+def valid_knapsack(X: list, pairs: list, weights: list, knapsack_capacity: int) -> bool:
+    """Return True iff X is a valid knapsack."""
 
     # check for right format
     if len(X) != len(weights):
@@ -31,6 +29,8 @@ def valid_knapsack(X, pairs, weights, knapsack_capacity):
         return False
 
     return True
+
+
 
 if __name__ == "__main__":
     X = eval(input().split(":")[1])
