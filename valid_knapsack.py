@@ -31,11 +31,11 @@ def valid_knapsack(X: list, pairs: list, weights: list, knapsack_capacity: int) 
     return True
 
 
-if __name__ == "__main__":
-    X = eval(input().split(":")[1])
-    pairs = eval(input().split(":")[1])
-    weights = eval(input().split(":")[1])
-    knapsack_capacity = eval(input().split(":")[1])
+# if __name__ == "__main__":
+#     X = eval(input().split(":")[1])
+#     pairs = eval(input().split(":")[1])
+#     weights = eval(input().split(":")[1])
+#     knapsack_capacity = eval(input().split(":")[1])
 
-    retval = valid_knapsack(X, pairs, weights, knapsack_capacity)
-    print(retval)
+#     retval = valid_knapsack(X, pairs, weights, knapsack_capacity)
+#     print(retval)
