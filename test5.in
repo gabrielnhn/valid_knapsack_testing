@@ -2,5 +2,4 @@ X: [1]
 pairs: []
 weights: [5]
 capacity: 10
-
 expected output: True

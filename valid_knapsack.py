@@ -30,17 +30,36 @@ def valid_knapsack(X: list, pairs: list, weights: list, knapsack_capacity: int) 
 
     return True
 
+import os
 
 if __name__ == "__main__":
-    X = eval(input().split(":")[1])
-    pairs = eval(input().split(":")[1])
-    weights = eval(input().split(":")[1])
-    knapsack_capacity = eval(input().split(":")[1])
+
+    files = os.listdir()
+    inputs = [file for file in files if file.endswith(".in")]
+    inputs.sort()
+
+    for file in inputs:
+        with open(file) as f:
+
+            X = eval(f.readline().split(":")[1])
+            pairs = eval(f.readline().split(":")[1])
+            weights = eval(f.readline().split(":")[1])
+            knapsack_capacity = eval(f.readline().split(":")[1])
+
+            try:
+                expected_output = f.readline().split(":")[1]
+            except:
+                print("ERROR ", file)
+                exit()
 
 
-    try:
-        retval = valid_knapsack(X, pairs, weights, knapsack_capacity)
-        print(retval)
-    
-    except ValueError:
-        print("ValueError")
+            print(f"File {file}.\n\t Returns '", end="")
+
+            try:
+                retval = valid_knapsack(X, pairs, weights, knapsack_capacity)
+                print(retval, end="', ")
+            
+            except ValueError:
+                print("ValueError", end=", ")
+
+            print(f"expected '{expected_output[1:]}'.")
