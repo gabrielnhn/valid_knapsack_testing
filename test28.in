@@ -2,3 +2,5 @@ X: [1, 1, 1]
 pairs: []
 weights: [1, 1, 1]
 capacity: 2
+
+expected output: False

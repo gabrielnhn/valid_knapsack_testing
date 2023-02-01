@@ -8,7 +8,7 @@ inputs.sort()
 
 
 for file in inputs:
-    with open(file, "w") as f:
+    with open(file, "a") as f:
         result = input(f"file {file} expected is: ")
 
         if result == "t":

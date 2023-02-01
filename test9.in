@@ -2,3 +2,5 @@ X: [1, 0, 0, 0]
 pairs: []
 weights: [1, 1]
 capacity: 10
+
+expected output: ValueError

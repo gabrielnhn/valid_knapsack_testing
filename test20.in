@@ -3,3 +3,5 @@ pairs: []
 weights: [1, 1, 1]
 capacity: 5
 
+
+expected output: True
