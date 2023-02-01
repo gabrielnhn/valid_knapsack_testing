@@ -3,16 +3,16 @@ def valid_knapsack(X: list, pairs: list, weights: list, knapsack_capacity: int) 
 
     # check for right format
     if len(X) != len(weights):
-        print("len(X) != len(weights)")
+        # print("len(X) != len(weights)")
         raise ValueError
 
     for pair in pairs:
         if type(pair) != tuple:
-            print(f"Pair {pair} is not a tuple")
+            # print(f"Pair {pair} is not a tuple")
             raise ValueError
         
         elif len(pair) != 2:
-            print(f"Length of pair {pair} != 2")
+            # print(f"Length of pair {pair} != 2")
             raise ValueError
 
     # actual algorithm:
@@ -37,5 +37,10 @@ if __name__ == "__main__":
     weights = eval(input().split(":")[1])
     knapsack_capacity = eval(input().split(":")[1])
 
-    retval = valid_knapsack(X, pairs, weights, knapsack_capacity)
-    print(retval)
+
+    try:
+        retval = valid_knapsack(X, pairs, weights, knapsack_capacity)
+        print(retval)
+    
+    except ValueError:
+        print("ValueError")
