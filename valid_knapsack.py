@@ -59,7 +59,7 @@ if __name__ == "__main__":
                 retval = valid_knapsack(X, pairs, weights, knapsack_capacity)
                 print(retval, end="', ")
             
-            except ValueError:
-                print("ValueError", end=", ")
+            except Exception as e:
+                print(f"{e.__class__.__name__}'", end=", ")
 
             print(f"expected '{expected_output[1:]}'.")
