@@ -34,6 +34,10 @@ import os
 
 if __name__ == "__main__":
 
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    ENDC = '\033[0m'
+
     files = os.listdir()
     inputs = [file for file in files if file.endswith(".in")]
     inputs.sort()
@@ -47,19 +51,29 @@ if __name__ == "__main__":
             knapsack_capacity = eval(f.readline().split(":")[1])
 
             try:
-                expected_output = f.readline().split(":")[1]
+                expected_output = f.readline().split(":")[1][1:]
             except:
                 print("ERROR ", file)
                 exit()
 
 
-            print(f"File {file}.\n\t Returns '", end="")
+            print(f"File {file} returns '", end="")
 
             try:
                 retval = valid_knapsack(X, pairs, weights, knapsack_capacity)
-                print(retval, end="', ")
             
             except Exception as e:
-                print(f"{e.__class__.__name__}'", end=", ")
+                retval = e.__class__.__name__
+            
+            print(retval, end="', ")
 
-            print(f"expected '{expected_output[1:]}'.")
+            print(f"expected '{expected_output}'.", end="  #")
+
+            if expected_output == retval:
+                print(OKGREEN + "SUCESS!" + ENDC)
+            else:
+                print(WARNING + "ERROR!" + ENDC)
+
+
+
+        
